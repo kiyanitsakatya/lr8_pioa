@@ -1,0 +1,39 @@
+#Тесты
+print("Результаты:")
+
+#1
+n_stones = random.randint(1, 20)
+print(f"1. Маршруты лягушки для n={n_stones}:")
+print(f"   Ответ: {frog_paths(n_stones)} способов")
+
+#2
+test_matrix = random_matrix(m, n, min_val=0, max_val=9)
+
+print(f"\n2. Случайная матрица размером {m}x{n}:")
+for row in test_matrix:
+    print(row)
+
+result = min_path_sum(test_matrix)
+print(f"   Ответ:Минимальная сумма пути: {result}")
+
+#3
+num_coins = random.randint(3, 6)
+coins_set = sorted(set(random.randint(1, 10) for _ in range(num_coins)))
+target_sum = random.randint(5, 50)
+print(f"\n3. Минимальное количество монет для суммы {target_sum} из набора {coins_set}:")
+print(f"   Ответ: {coin_change(coins_set, target_sum)} монеты")
+
+#4
+length = random.randint(5, 15)
+sequence = [random.randint(1, 100) for _ in range(length)]
+print(f"\n4. Длина наибольшей возрастающей подпоследовательности для {sequence}:")
+print(f"   Ответ: {length_of_lis(sequence)}")
+
+#5
+n_items = random.randint(3, 8)
+max_W = random.randint(5, 20)
+w = [random.randint(1, 8) for _ in range(n_items)]
+v = [random.randint(5, 30) for _ in range(n_items)]
+print(f"\n5. Максимальная ценность рюкзака (вместимость W={max_W}, объёмы={w}, ценности={v}):")
+print(f"   Ответ: {knapsack(max_W, w, v)}")
+
